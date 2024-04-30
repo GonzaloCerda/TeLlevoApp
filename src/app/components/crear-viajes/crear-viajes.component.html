@@ -1,0 +1,90 @@
+<ion-header class="ion-text-start">
+    <ion-toolbar class="hidden-lg-up">
+        <ion-title class="hidden-lg-up">Crear viajes</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="6" size-lg="6">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Viajes</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <form [formGroup]="formularioRecuperar" (ngSubmit)="guardarViajes()">
+                            <ion-item>
+                                <ion-label position="floating">Desde</ion-label>
+                                <ion-select formControlName="desde" [(ngModel)]="viaje.comienzo">
+                                    <ion-select-option *ngFor="let localidad of localidades" [value]="localidad.id">{{localidad.nombre}}</ion-select-option>
+                                </ion-select>
+                            </ion-item>
+                            <div *ngFor="let error of mensajeError.desde">
+                                <ng-container *ngIf="desde.hasError(error.type) && (desde.dirty || desde.touched)">
+                                    <small class="error-message">{{error.message}}</small>
+                                </ng-container>
+                            </div>
+                            <ion-item>
+                                <ion-label position="floating">Hasta</ion-label>
+                                <ion-select formControlName="destino" [(ngModel)]="viaje.destino">
+                                    <ion-select-option *ngFor="let localidad of localidades" [value]="localidad.id">{{localidad.nombre}}</ion-select-option>
+                                </ion-select>
+                            </ion-item>
+                            <div *ngFor="let error of mensajeError.destino">
+                                <ng-container *ngIf="destino.hasError(error.type) && (destino.dirty || destino.touched)">
+                                    <small class="error-message">{{error.message}}</small>
+                                </ng-container>
+                            </div>
+                            <ion-item>
+                                <ion-label position="floating">Tarifa</ion-label>
+                                <ion-input formControlName="tarifa" type="number" [(ngModel)]="viaje.tarifa"></ion-input>
+                            </ion-item>
+                            <div *ngFor="let error of mensajeError.tarifa">
+                                <ng-container *ngIf="tarifa.hasError(error.type) && (tarifa.dirty || tarifa.touched)">
+                                    <small class="error-message">{{error.message}}</small>
+                                </ng-container>
+                            </div>
+                            <ion-row class="ion-justify-content-end">
+                                <ion-col size-sm="8" size-md="6" size-lg="4" class="ion-margin-top">
+                                    <ion-button [disabled]="!formularioRecuperar.valid" type="submit" expand="full">Ingresar</ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size-sm="9" size-md="6" size-lg="6">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Viajes Desde tu Ubicación</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-item>
+                            <ion-label position="floating">Desde</ion-label>
+                            <ion-input [(ngModel)]="viaje.startgeo.lat"></ion-input>
+                            <ion-input [(ngModel)]="viaje.startgeo.lng"></ion-input>
+                            <ion-button (click)="getLocation()">Obtener Ubicación</ion-button>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="floating">Hasta</ion-label>
+                            <ion-select [(ngModel)]="viaje.destino">
+                                <ion-select-option *ngFor="let localidad of localidades" [value]="localidad.id">{{localidad.nombre}}</ion-select-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="floating">Tarifa</ion-label>
+                            <ion-input type="number" [(ngModel)]="viaje.tarifa"></ion-input>
+                        </ion-item>
+                        <ion-row class="ion-justify-content-end">
+                            <ion-col size-sm="8" size-md="6" size-lg="4">
+                                <ion-button shape="round" expand="block" (click)="guardarViajesGeolocal()">Crear</ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

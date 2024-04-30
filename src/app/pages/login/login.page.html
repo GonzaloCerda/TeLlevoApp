@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title></ion-title>
+        <div class="ion-margin-top ion-text-center">
+            <img src="/assets/te_llevo_app.png">
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="9" size-lg="7">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-title class="ion-text-center">Iniciar Sesión</ion-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <form [formGroup]="formularioRecuperar" (ngSubmit)="submit()">
+                            <ion-item lines="full">
+                                <ion-label position="floating">
+                                    <p>Usuario</p>
+                                </ion-label>
+                                <ion-input id="usuario" formControlName="usuario" inputmode="text" [(ngModel)]="dato"></ion-input>
+                            </ion-item>
+                            <div *ngFor="let error of mensajeError.usuario">
+                                <ng-container *ngIf="usuario.hasError(error.type) && (usuario.dirty || usuario.touched)">
+                                    <small class="error-message">{{error.message}}</small>
+                                </ng-container>
+                            </div>
+                            <ion-item lines="full">
+                                <ion-label position="floating">
+                                    <p>Contraseña</p>
+                                </ion-label>
+                                <ion-input id="contrasena" formControlName="contrasena" inputmode="text" type="password"></ion-input>
+                            </ion-item>
+                            <div *ngFor="let error of mensajeError.contrasena">
+                                <ng-container *ngIf="contrasena.hasError(error.type) && (contrasena.dirty || contrasena.touched)">
+                                    <small class="error-message">{{error.message}}</small>
+                                </ng-container>
+                            </div>
+                            <ion-row class="ion-justify-content-center">
+                                <ion-col size-sm="8" size-md="6" size-lg="4" class="ion-margin-top">
+                                    <ion-button [disabled]="!formularioRecuperar.valid" type="submit" expand="full">Ingresar</ion-button>
+                                </ion-col>
+                            </ion-row>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="8" size-md="5" size-lg="3">
+                <ion-item class="ion-text-center" button lines="none" fill="clear" (click)="toRecover()">
+                    <ion-label>
+                        <a>Restablecer Contraseña</a>
+                    </ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

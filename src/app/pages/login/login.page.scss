@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+//Para los titulos => font-family: 'Krub', sans-serif;
+//Para los textos => font-family: 'Open Sans', sans-serif;
+ion-title {
+    font-family: 'Krub', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+img {
+    height: 85px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-style: oblique;
+}
+
+ion-content,
+ion-toolbar {
+    --background: #AABFF5;
+}
+
+ion-card {
+    --background: #EEF4FF;
+}
+
+ion-button {
+    --background: #F0C966;
+}
+
+ion-item {
+    border-radius: 5%;
+    --background: #ffffff;
+}
+
+.error-message {
+    color: rgb(255, 0, 0);
+}

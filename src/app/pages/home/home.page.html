@@ -1,0 +1,44 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+        <ion-title></ion-title>
+        <div class="ion-margin-top ion-text-center">
+            <img src="/assets/te_llevo_app.png">
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="9" size-lg="7">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-title>Restablecer Contraseña</ion-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <form [formGroup]="formularioRecuperar" (ngSubmit)="submit()">
+                            <ion-item>
+                                <ion-label position="floating">
+                                    <p>Ingresa tu correo</p>
+                                </ion-label>
+                                <ion-input id="email" formControlName="email" inputmode="email"></ion-input>
+                            </ion-item>
+                            <div *ngFor="let error of mensajeError.email">
+                                <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+                                    <small class="error-message">{{error.message}}</small>
+                                </ng-container>
+                            </div>
+                            <ion-row class="ion-justify-content-center">
+                                <ion-col size-sm="8" size-md="6" size-lg="4">
+                                    <div class="ion-margin-top">
+                                        <ion-button [disabled]="!formularioRecuperar.valid" type="submit" expand="block">enviar</ion-button>
+                                    </div>
+                                </ion-col>
+                            </ion-row>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

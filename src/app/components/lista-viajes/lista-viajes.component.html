@@ -1,0 +1,56 @@
+<ion-header class="ion-text-start">
+    <ion-toolbar class="hidden-lg-up">
+        <ion-title class="hidden-lg-up">Lista viajes</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="9" size-lg="7">
+                <ion-card>
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-item *ngFor="let viaje of viajes">
+                                <ion-label>
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h4>Inicio :</h4>
+                                            </ion-col>
+                                            <ion-col size="6">
+                                                <p>{{viaje.comienzo}}</p>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h4>Destiono :</h4>
+                                            </ion-col>
+                                            <ion-col size="6">
+                                                <p>{{viaje.destino}}</p>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h4>Costo :</h4>
+                                            </ion-col>
+                                            <ion-col size="6">
+                                                <p>${{viaje.tarifa}}</p>
+                                            </ion-col>
+                                        </ion-row>
+
+                                        <ion-row class="ion-justify-content-end">
+                                            <ion-col size-sm="8" size-md="6" size-lg="4">
+                                                <ion-button shape="round" expand="block" (click)="past(viaje)">Ver Viaje</ion-button>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+                                </ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

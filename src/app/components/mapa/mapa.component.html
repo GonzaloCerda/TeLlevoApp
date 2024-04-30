@@ -1,0 +1,32 @@
+<ion-header class="ion-text-start">
+    <ion-toolbar class="hidden-lg-up">
+        <ion-title class="hidden-lg-up">Mapas</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div #map id="map"></div>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="9" size-lg="7">
+                <ion-card>
+                    <ion-card-content>
+                        <form class="contact-form" (submit)="sendEmail($event)">
+                            <ion-item>
+                                <ion-label position="floating">Tu Correo</ion-label>
+                                <ion-input type="email" name="email_pasajero"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label position="floating">Correo destinado</ion-label>
+                                <ion-input type="email" name="email_conductor"></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-button type="submit" value="Send">Enviar</ion-button>
+                            </ion-item>
+                        </form>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

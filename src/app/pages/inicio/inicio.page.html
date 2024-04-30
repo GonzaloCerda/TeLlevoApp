@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar class="hidden-md-down">
+        <ion-button slot="start" id="salir" (click)="salir()">Cerrar Sesión</ion-button>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                </ion-col>
+                <ion-col>
+                    <ion-segment (ionChange)="segmentChanged($event)">
+                        <ion-segment-button value="inicio">
+                            <ion-text>Inicio</ion-text>
+                        </ion-segment-button>
+                        <ion-segment-button value="lista-viajes">
+                            <ion-text>Viajes</ion-text>
+                        </ion-segment-button>
+                        <ion-segment-button value="mapa">
+                            <ion-text>Mapa</ion-text>
+                        </ion-segment-button>
+                        <ion-segment-button value="crear-viajes">
+                            <ion-text>Crear Viaje</ion-text>
+                        </ion-segment-button>
+                    </ion-segment>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-router-outlet></ion-router-outlet>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-segment class="hidden-lg-up" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="inicio">
+                <ion-icon name="person-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="lista-viajes">
+                <ion-icon name="trail-sign-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="mapa">
+                <ion-icon name="navigate-circle-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-segment-button value="crear-viajes">
+                <ion-icon name="create-outline"></ion-icon>
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
+</ion-footer>

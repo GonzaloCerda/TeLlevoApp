@@ -1,0 +1,17 @@
+intalaciones 2v
+
+npm i @ionic-native/core
+
+npm install -g json-server
+npm install @ionic/storage-angular
+
+npm install cordova-plugin-geolocation
+npm install @ionic-native/geolocation
+
+npm install emailjs-com --save
+
+npm install @capacitor/android
+npx cap add android
+ionic capacitor sync android
+npx cap open android 
+

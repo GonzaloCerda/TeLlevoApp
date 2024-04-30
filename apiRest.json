@@ -1,0 +1,136 @@
+{
+    "viajes": [{
+            "id": 1,
+            "comienzo": "Viña del Mar",
+            "destino": "Playa Ancha",
+            "tarifa": "1200",
+            "startgeo": {
+                "lat": -33.0053654,
+                "lng": -71.6002959
+            },
+            "endgeo": {
+                "lat": -33.0362318,
+                "lng": -71.6519334
+            }
+        },
+        {
+            "id": 3,
+            "comienzo": "Quilpué",
+            "destino": "Placilla",
+            "tarifa": "22",
+            "startgeo": {
+                "lat": -33.0517266,
+                "lng": -71.478075
+            },
+            "endgeo": {
+                "lat": -33.1254462,
+                "lng": -71.5833151
+            }
+        },
+        {
+            "id": 6,
+            "comienzo": "Lugar Conductor",
+            "destino": "Placilla",
+            "tarifa": 1000,
+            "startgeo": {
+                "lat": -33.115027,
+                "lng": -71.5798574
+            },
+            "endgeo": {
+                "lat": -33.1254462,
+                "lng": -71.5833151
+            }
+        },
+        {
+            "id": 7,
+            "comienzo": "Placilla",
+            "destino": "Villa Alemana",
+            "tarifa": 1200,
+            "startgeo": {
+                "lat": -33.1254462,
+                "lng": -71.5833151
+            },
+            "endgeo": {
+                "lat": -33.0471737,
+                "lng": -71.4004397
+            }
+        },
+        {
+            "id": 8,
+            "comienzo": "Lugar Conductor",
+            "destino": "Playa Ancha",
+            "tarifa": 800,
+            "startgeo": {
+                "lat": -33.1150365,
+                "lng": -71.5798789
+            },
+            "endgeo": {
+                "lat": -33.0362318,
+                "lng": -71.6519334
+            }
+        },
+        {
+            "id": 9,
+            "comienzo": "Lugar Conductor",
+            "destino": "Playa Ancha",
+            "tarifa": 2333,
+            "startgeo": {
+                "lat": -33.1150427,
+                "lng": -71.5798868
+            },
+            "endgeo": {
+                "lat": -33.0362318,
+                "lng": -71.6519334
+            }
+        }
+    ],
+    "localidades": [{
+            "id": 1,
+            "nombre": "Valparaíso",
+            "geo": {
+                "lat": -33.0501236,
+                "lng": -71.6460681
+            }
+        },
+        {
+            "id": 2,
+            "nombre": "Playa Ancha",
+            "geo": {
+                "lat": -33.0362318,
+                "lng": -71.6519334
+            }
+        },
+        {
+            "id": 3,
+            "nombre": "Placilla",
+            "geo": {
+                "lat": -33.1254462,
+                "lng": -71.5833151
+            }
+        },
+        {
+            "id": 4,
+            "nombre": "Villa Alemana",
+            "geo": {
+                "lat": -33.0471737,
+                "lng": -71.4004397
+            }
+        },
+        {
+            "id": 5,
+            "nombre": "Viña del Mar",
+            "geo": {
+                "lat": -33.0053654,
+                "lng": -71.6002959
+            }
+        },
+        {
+            "id": 6,
+            "nombre": "Quilpué",
+            "geo": {
+                "lat": -33.0517266,
+                "lng": -71.478075
+            }
+        }
+    ]
+}

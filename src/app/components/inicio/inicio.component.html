@@ -1,0 +1,69 @@
+<ion-header class="ion-text-start">
+    <ion-toolbar class="hidden-lg-up">
+        <ion-title class="hidden-lg-up">Inicio</ion-title>
+        <ion-button slot="end" id="salir" (click)="salir()">Cerrar Sesión</ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="9" size-lg="7">
+                <ion-card>
+                    <ion-card-content>
+                        <ion-item lines="none">
+                            <ion-label>
+                                Bienvenid@
+                            </ion-label>
+                            <ion-label>
+                                <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+                                <p slot="end">{{dato}}</p>
+                            </ion-label>
+                        </ion-item>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center">
+            <ion-col size-sm="9" size-md="9" size-lg="7">
+                <ion-card>
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-item *ngFor="let viaje of viajes">
+                                <ion-label>
+                                    <ion-grid>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h4>Inicio :</h4>
+                                            </ion-col>
+                                            <ion-col size="6">
+                                                <p>{{viaje.comienzo}}</p>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h4>Destiono :</h4>
+                                            </ion-col>
+                                            <ion-col size="6">
+                                                <p>{{viaje.destino}}</p>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>
+                                            <ion-col size="4">
+                                                <h4>Costo :</h4>
+                                            </ion-col>
+                                            <ion-col size="6">
+                                                <p>${{viaje.tarifa}}</p>
+                                            </ion-col>
+                                        </ion-row>
+                                    </ion-grid>
+                                    <ion-button shape="round" (click)="eliminarViajes(viaje.id)">eliminar</ion-button>
+                                </ion-label>
+                            </ion-item>
+                        </ion-list>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
